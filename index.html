@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogin</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-container container flex space-between align-center">
+            <div class="logo">Blogin<span>.</span></div>
+            
+            <ul class="main-nav clean-list flex align-center justify-center">
+                <li><a href="#" class="flex justify-center align-center">Journal</a></li>
+                <li><a href="#" class="flex justify-center align-center">About</a></li>
+                <li><a href="#" class="flex justify-center align-center">Work</a></li>
+                <li><a href="#" class="flex justify-center align-center">Contact</a></li>
+            </ul>
+            <button class="menu-btn btn" onclick="toggleButton()">
+                <img src="img/hamburger.png" alt="">
+                <img class="hide" src="img/close.png" alt="">
+            </button>
+        </div>
+
+    </header>
+
+    <main class="main-content card-container container">
+
+        <div class="card flex ">
+            <img src="img/001.png" class="card-img">
+            <div class="card-content flex column">
+                <h3 class="card-title">Duis aute irure dolor in
+                    henderit in voluptate.</h3>
+                <p class="card-info">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex
+                    ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur...
+                </p>
+                <button class="card-btn btn">Continue Reading<img src="img/right-arrow.png"></button>
+            </div>
+        </div>
+        <div class="card flex ">
+            <img src="img/002.png" class="card-img">
+            <div class="card-content flex column">
+                <h3 class="card-title">Duis aute irure dolor in
+                    henderit in voluptate.</h3>
+                <p class="card-info">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex
+                    ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur...
+                </p>
+                <button class="card-btn btn">Continue Reading<img src="img/right-arrow.png"></button>
+            </div>
+        </div>
+        <div class="card flex ">
+            <img src="img/003.png" class="card-img">
+            <div class="card-content flex column">
+                <h3 class="card-title">Duis aute irure dolor in
+                    henderit in voluptate.</h3>
+                <p class="card-info">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex
+                    ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum. <br>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur...
+                </p>
+                <button class="card-btn btn">Continue Reading<img src="img/right-arrow.png"></button>
+            </div>
+        </div>
+        <nav class="card-nav flex space-between">
+            <div class="btn"><span>←</span>Previous</div>
+            <div class="btn">Next<span>→</span></div>
+        </nav>
+    </main>
+    <footer class="main-footer flex align-center justify-center column">
+        <h3 class="footer-logo">Blogin<span>.</span></h3>
+        <p class="footer-info">© 2014 Blogin.com - All Rights Reserved - Find more free Templates at Pixelhint.com</p>
+        <ul class="footer-nav clean-list flex">
+            <li class="social social1 flex justify-center align-center btn"><img src="img/F.png" alt=""></li>
+            <li class="social social2 flex justify-center align-center btn"><img src="img/T.png" alt=""></li>
+            <li class="social social3 flex justify-center align-center btn"><img src="img/B.png" alt=""></li>
+            <li class="social social4 flex justify-center align-center btn"><img src="img/O.png" alt=""></li>
+        </ul>
+    </footer>
+
+    <script>
+        function toggleButton(){
+            const elBtns = document.querySelectorAll('.menu-btn img')
+            elBtns.forEach(btn => btn.classList.toggle('hide'))
+            document.body.classList.toggle('show-nav')
+        }
+    </script>
+</body>
+
+</html>
