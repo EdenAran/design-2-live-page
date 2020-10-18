@@ -541,8 +541,12 @@ h1, h2, h3, h4, h5, h6 {
         height: 100%;
         width: 100%;
         border-radius: 0;
+        font-size: 1.1rem;
     }
     .modal h4 {
-        margin: 3em;
+        margin: 1em;
+    }
+    .modal p{
+        padding-bottom: 1em;
     }
 }
