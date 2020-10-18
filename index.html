@@ -9,27 +9,27 @@
 </head>
 
 <body>
-    <header class="main-header">
+    <header class="main-header" onclick="toggleDropdownActive()">
         <div class="header-container container flex space-between align-center">
             <div class="logo">Blogin<span>.</span></div>
 
             <ul class="main-nav clean-list flex align-center justify-center">
                 <div class="dropdown">
-                    <li data-id="journal" onclick="toggleDropdownActive(this)"><a href="#"
+                    <li class="dropdown-btn" onclick="toggleDropdownActive(this, event)"><a href="#"
                             class="nav-link journal flex justify-center align-center"
                             onclick="toggleActive(this)">Journal</a></li>
                     <ul class="dropdown-menu clean-list">
-                        <li><a class="drop-link btn">October 2016</a></li>
-                        <li><a class="drop-link btn">January 2017</a></li>
-                        <li><a class="drop-link btn">April 2017</a></li>
-                        <li><a class="drop-link btn">July 2017</a></li>
+                        <li><a class="drop-link btn" onclick="event.stopPropagation()">October 2016</a></li>
+                        <li><a class="drop-link btn" onclick="event.stopPropagation()">January 2017</a></li>
+                        <li><a class="drop-link btn" onclick="event.stopPropagation()">April 2017</a></li>
+                        <li><a class="drop-link btn" onclick="event.stopPropagation()">July 2017</a></li>
                     </ul>
                 </div>
-                <li onclick="toggleDropdownActive(this)"><a href="#" class="nav-link flex justify-center align-center"
+                <li onclick="toggleDropdownActive(this, event)"><a href="#" class="nav-link flex justify-center align-center"
                         onclick="toggleActive(this)">About</a></li>
-                <li onclick="toggleDropdownActive(this)"><a href="#" class="nav-link flex justify-center align-center"
+                <li onclick="toggleDropdownActive(this, event)"><a href="#" class="nav-link flex justify-center align-center"
                         onclick="toggleActive(this)">Work</a></li>
-                <li onclick="toggleDropdownActive(this)"><a href="#" class="nav-link flex justify-center align-center"
+                <li onclick="toggleDropdownActive(this, event)"><a href="#" class="nav-link flex justify-center align-center"
                         onclick="toggleActive(this)">Contact</a></li>
             </ul>
             <button class="menu-btn btn" onclick="toggleMenu()">
@@ -144,33 +144,9 @@
             <button onclick="toggleModal()">Cancel</button>
         </div>
     </section>
-    <script>
-        function toggleMenu() {
-            const elBtns = document.querySelectorAll('.menu-btn img')
-            elBtns.forEach(btn => btn.classList.toggle('hide'))
-            document.body.classList.toggle('show-nav')
-        }
+    <script src="js/main.js">
 
-        function toggleActive(el) {
-            const elNav = document.querySelectorAll('.main-nav a');
-            elNav.forEach(nav => nav.classList.remove('active'))
-            el.classList.add('active')
-        }
-        function toggleDropdownActive(el) {
-            const isDropIncluded = el.classList.contains('drop-active');
-            const elNav = document.querySelectorAll('.main-nav li');
-            elNav.forEach(nav => nav.classList.remove('drop-active'))
-            if (!isDropIncluded) el.classList.add('drop-active');
-            else el.classList.remove('drop-active');
-        }
 
-        function toggleModal(elCard) {
-            if (!elCard) document.querySelector('.modal').classList.toggle('show')
-            else {
-                if (window.innerWidth > 780) return;
-                document.querySelector('.modal').classList.toggle('show');
-            }
-        }
     </script>
 </body>
 
