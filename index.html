@@ -15,17 +15,22 @@
 
             <ul class="main-nav clean-list flex align-center justify-center">
                 <div class="dropdown">
-                    <li><a href="#" class="nav-link journal flex justify-center align-center" onclick="toggleActive(this)">Journal</a></li>
-                    <ul class="dropdown-menu clean-list" >
-                        <li><a class="drop-link btn" >October 2016</a></li>
+                    <li data-id="journal" onclick="toggleDropdownActive(this)"><a href="#"
+                            class="nav-link journal flex justify-center align-center"
+                            onclick="toggleActive(this)">Journal</a></li>
+                    <ul class="dropdown-menu clean-list">
+                        <li><a class="drop-link btn">October 2016</a></li>
                         <li><a class="drop-link btn">January 2017</a></li>
                         <li><a class="drop-link btn">April 2017</a></li>
                         <li><a class="drop-link btn">July 2017</a></li>
                     </ul>
                 </div>
-                <li><a href="#" class="nav-link flex justify-center align-center" onclick="toggleActive(this)">About</a></li>
-                <li><a href="#" class="nav-link flex justify-center align-center" onclick="toggleActive(this)">Work</a></li>
-                <li><a href="#" class="nav-link flex justify-center align-center" onclick="toggleActive(this)">Contact</a></li>
+                <li onclick="toggleDropdownActive(this)"><a href="#" class="nav-link flex justify-center align-center"
+                        onclick="toggleActive(this)">About</a></li>
+                <li onclick="toggleDropdownActive(this)"><a href="#" class="nav-link flex justify-center align-center"
+                        onclick="toggleActive(this)">Work</a></li>
+                <li onclick="toggleDropdownActive(this)"><a href="#" class="nav-link flex justify-center align-center"
+                        onclick="toggleActive(this)">Contact</a></li>
             </ul>
             <button class="menu-btn btn" onclick="toggleMenu()">
                 <img src="img/hamburger.png" alt="">
@@ -52,7 +57,6 @@
                     </p>
                 </div>
                 <button class="card-btn btn" onclick="toggleModal()">Continue Reading</button>
-                <!-- <button class="card-btn btn">Continue Reading<img src="img/right-arrow.png"></button> -->
             </div>
         </div>
         <div class="card flex" onclick="toggleModal(this)">
@@ -152,6 +156,13 @@
             elNav.forEach(nav => nav.classList.remove('active'))
             el.classList.add('active')
         }
+        function toggleDropdownActive(el) {
+            const isDropIncluded = el.classList.contains('drop-active');
+            const elNav = document.querySelectorAll('.main-nav li');
+            elNav.forEach(nav => nav.classList.remove('drop-active'))
+            if (!isDropIncluded) el.classList.add('drop-active');
+            else el.classList.remove('drop-active');
+        }
 
         function toggleModal(elCard) {
             if (!elCard) document.querySelector('.modal').classList.toggle('show')
@@ -160,7 +171,6 @@
                 document.querySelector('.modal').classList.toggle('show');
             }
         }
-
     </script>
 </body>
 
